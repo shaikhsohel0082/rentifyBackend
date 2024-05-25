@@ -1,0 +1,16 @@
+import express from "express";
+import { createPost } from "../Controllers/postController.js";
+import { protect } from "../middleware/protect.js";
+import { getPost } from "../Controllers/postController.js";
+import { deletePost } from "../Controllers/postController.js";
+import { updatePost } from "../Controllers/postController.js";
+import { likePost } from "../Controllers/postController.js";
+import { sendMail } from "../Controllers/postController.js";
+const postRouter = express.Router();
+postRouter.post("/createpost/:id", createPost);
+postRouter.get("/getposts", getPost);
+postRouter.delete("/deletepost/:id", deletePost);
+postRouter.put("/updatepost/:id", updatePost);
+postRouter.put("/likepost/:id", likePost);
+postRouter.post("/sendmail", sendMail);
+export default postRouter;
