@@ -3,17 +3,14 @@ import connectToDB from "./src/config/mongodb.js";
 import userRouter from "./src/Routes/userRoutes.js";
 import postRouter from "./src/Routes/postRoutes.js";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 const server = express();
 
 server.use(express.json());
 
-server.use(
-  cors({
-    origin: "http://localhost:3000", // Your frontend URL
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-  })
-);
+server.use(cors());
 
 // Middleware to log cookies for debugging
 server.use((req, res, next) => {
@@ -28,7 +25,7 @@ server.get("/", (req, res) => {
 server.use("/api/users", userRouter);
 server.use("/api/posts", postRouter);
 
-server.listen(8200, () => {
-  console.log("Server is listening on port 8200");
+server.listen(process.env.PORT || 8200, () => {
+  console.log(`Server is listening on port${process.env.PORT || 8200}`);
   connectToDB();
 });
