@@ -1,4 +1,16 @@
 {
+  "name": "broker",
+  "version": "1.0.0",
+  "description": "backend application for rent brokerage app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx pm2-runtime start ecosystem.config.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "sohel shaikh",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -8,20 +20,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.2",
     "mongoose": "^8.4.0",
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "pm2": "^5.1.0"
   },
-  "name": "broker",
-  "version": "1.0.0",
-  "description": "backend application for rent brokerage app",
-  "main": "node index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2-runtime start ecosystem.config.js",
-    "dev": "nodemon index.js"
-  },
-  "author": "sohel shaikh",
-  "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.1.0"
   }

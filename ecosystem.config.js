@@ -1,8 +1,8 @@
 export default {
   apps: [
     {
-      name: "my-app",
-      script: "./app.js",
+      name: "broker",
+      script: "./index.js",
       instances: "max",
       exec_mode: "cluster",
       env: {
